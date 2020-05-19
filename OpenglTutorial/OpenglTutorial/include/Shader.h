@@ -19,8 +19,11 @@ public:
 		vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 		fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 		try {
-			vShaderFile.open(vertexPath);
-			fShaderFile.open(fragmentPath);
+			vShaderFile.open(vertexPath, ifstream::in | std::ios::binary);
+			if (vShaderFile.fail()) {
+				//std::cerr << "ERROR shader ifstream error ::" << e.code().message() << std::endl;
+			}
+			fShaderFile.open(fragmentPath, ifstream::in | std::ios::binary);
 			std::stringstream vShaderStream;
 			std::stringstream fShaderStream;
 
@@ -32,8 +35,8 @@ public:
 			vertexCode = vShaderStream.str();
 			fragmentCode = fShaderStream.str();
 		}
-		catch (std::ifstream::failure& e) {
-			std::cout << "ERROR::Shader::shader ifstream error" << std::endl;
+		catch (std::system_error& e) {
+			std::cerr << "ERROR shader ifstream error ::" << e.code().message() << std::endl;
 		}
 
 		const char* vShaderCode = vertexCode.c_str();

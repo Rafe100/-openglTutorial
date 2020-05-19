@@ -29,7 +29,7 @@ int main() {
 		return -1;
 	}
 	//glViewport(0,0,800,600);
-	Shader shader("vertex.vs","fragment.fs");
+	Shader shader("E:/openglTutorial/-openglTutorial/OpenglTutorial/OpenglTutorial/shader/vertex.vs","E:/openglTutorial/-openglTutorial/OpenglTutorial/OpenglTutorial/shader/fragment.fs");
 	float vertices[] = {
 		 0.5f,  0.5f, 0.0f,  // top right
 		 0.5f, -0.5f, 0.0f,  // bottom right
