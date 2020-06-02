@@ -139,7 +139,7 @@
     <ClCompile Include="src\stb_image_wrap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
+    <ClInclude Include="include\camera.h" />
     <ClInclude Include="include\Shader.h" />
     <ClInclude Include="include\stb_image.h" />
   </ItemGroup>
