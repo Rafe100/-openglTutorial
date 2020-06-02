@@ -71,6 +71,24 @@ public:
 		}
 	}
 
+	void ProcessMouseMOvement(float xoffset, float yoffset, GLboolean constrainPitch = true)
+	{
+		xoffset *= MouseSensitivity;
+		yoffset *= MouseSensitivity;
+		Yaw += xoffset;
+		Pitch += yoffset;
+		updateCameraVector();
+	}
+
+	void ProcessMouseScroll(float yoffset)
+	{
+		Zoom -= (float)yoffset;
+		if (Zoom < 1.0f)
+			Zoom = 1.0f;
+		if (Zoom > 45.0f)
+			Zoom = 45.0f;
+	}
+
 private:
 	void updateCameraVector() {
 		glm::vec3 front;
