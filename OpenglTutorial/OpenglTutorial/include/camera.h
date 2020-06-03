@@ -71,7 +71,7 @@ public:
 		}
 	}
 
-	void ProcessMouseMOvement(float xoffset, float yoffset, GLboolean constrainPitch = true)
+	void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
 	{
 		xoffset *= MouseSensitivity;
 		yoffset *= MouseSensitivity;
